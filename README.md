@@ -1,7 +1,7 @@
 # ElasticsearchSampleProject with SpringMVC 
 
 > 개발 환경
-* Spring 5.1.5
+* Spring 5.1.5 RELEASE
 * Elasticsearch 6.6.0 (rest-high-level-client)
 
 
