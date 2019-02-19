@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+ 
+	<!-- Appender, Layout 설정 -->
+	<Appenders>
+	  <Console name="console" target="SYSTEM_OUT">
+	   <PatternLayout pattern="%d{HH:mm:ss.SSS} [%-5level] - %msg%n"/>
+	  </Console>
+	  <File name="file" fileName="./logs/file/sample.log" append="false">
+	   <PatternLayout pattern="%d %5p [%c] %m%n"/>
+	  </File>
+	</Appenders>
+	 
+	 <!-- Logger 설정 -->
+	<Loggers>
+	 	<!-- attribute: name(Logger명), level(Log Level), additivity(중복로깅여부, true or false) -->
+	  <!-- element: AppenderRef(Appender명) -->
+	  <Logger name="kr.co.ensecure.piias" level="INFO" additivity="false">
+	   <AppenderRef ref="console"/>  
+	  </Logger>
+	  <Logger name="kr.co.ensecure.piias.util" level="DEBUG" additivity="false">
+	   <AppenderRef ref="console"/>  
+	  </Logger>
+	  <Logger name="kr.co.ensecure.piias.config" level="DEBUG" additivity="false">
+	   <AppenderRef ref="console"/>  
+	  </Logger>
+	  <Logger name="org.springframework.core" level="INFO" additivity="false">
+	   <AppenderRef ref="console"/>  
+	  </Logger>
+	  <Logger name="org.springframework.web" level="INFO" additivity="false">
+	   <AppenderRef ref="console"/>  
+	  </Logger>
+	  <Root level="ERROR">
+	   <AppenderRef ref="console"/>
+	  </Root>
+	  
+	</Loggers>
+ 
+</Configuration>

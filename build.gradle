@@ -1,0 +1,48 @@
+plugins {
+  id 'java'
+  id 'war'
+  id 'eclipse-wtp'
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+version = '1.0'
+
+eclipse {
+	wtp {
+		facet {
+			facet name: 'jst.web', version: '4.0' // Servlet Spec Version 
+      facet name: 'jst.java', version: '1.8' // Java Version 
+		}
+	}
+}
+
+dependencies {
+	// 나중에 올릴 서버가 서블릿 컨테이너이기 때문에 war 파일은 서버의 api를 사용하기 위함
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+  implementation 'com.google.guava:guava:23.0'
+  testImplementation 'junit:junit:4.12'
+  // Libraries for work
+	compile group: 'org.springframework', name: 'spring-webmvc', version: '5.1.5.RELEASE'
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+	compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.11.2'
+	compile group: 'log4j', name: 'log4j', version: '1.2.17'
+	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+	compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.2'
+	
+	// Elasticsearch
+	compile 'org.elasticsearch.client:elasticsearch-rest-high-level-client:6.6.0'
+	compile 'org.elasticsearch:elasticsearch:6.6.0'
+}
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
