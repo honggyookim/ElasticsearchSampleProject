@@ -22,7 +22,7 @@ public class ElasticSearchConfig {
 	 * @Value
 	 * - properties 파일로부터 설정값을 읽을 때 사용한다.
 	 * - root-context.xml에 properties를 읽을 수 있도록 선언하고, 
-	 *   클래스에서 해당 properties 파일로부터 이 annotation을 선언하여 프로퍼티를 사용할 수 있다.    
+	 *   클래스에서 이 annotation을 선언하여 해당 properties 파일로부터 프로퍼티를 사용할 수 있다.    
 	 */
 	
 	@Value("${elasticsearch.host}")
