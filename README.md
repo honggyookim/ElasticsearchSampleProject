@@ -7,6 +7,9 @@
 
 <br/>
 
+> #### 2019-02-20 업데이트
+* Logstash의 Configuration에 사용될 Grok 패턴 사용법이 Wiki에 추가되었습니다.
+
 > #### Ver 1.0 릴리즈 정보
 * Elasticsearch는 config 파일만 작성된 상태로 실제 PUT, SELECT 등의 기능은 업데이트 예정입니다.
 
